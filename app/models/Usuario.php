@@ -6,7 +6,7 @@
  * Time: 08:57
  */
 
-require '../connection/Connection.php';
+require __DIR__.'/../connection/Connection.php';
 
 class Usuario {
 
