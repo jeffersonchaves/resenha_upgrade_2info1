@@ -27,21 +27,21 @@ class Usuario {
     }
 
     public function getUsuarios() {
-
         $listaUsuario = $this->conexao->query("select * from usuarios")->fetchAll();
         return $listaUsuario;
     }
+
+    public function create($nome, $email, $senha){
+
+        $sql = "insert into usuarios (nome, email, senha) values ('$nome', '$email', '$senha')";
+        $resultado = $this->conexao->exec($sql);
+
+        return $resultado;
+    }
 }
 
-//$usuario1 = new Usuario();
-//$usuario1->nome = "Jefferson Chaves";
-//$usuario1->email = "jefferson.email@ifc.edu.br";
-//$usuario1->exibe();
-//
-//echo "<br>";
-//$usuario2 = new Usuario();
-//$usuario2->nome = "Leonardo Chaves";
-//$usuario2->email = "leonardo@gmail.com";
+//$usuario = new Usuario();
+//$usuario->create("Gabriel Rosário", "gabriel@gmail.com", "senha_segura");
 
 
 
