@@ -38,10 +38,16 @@ class Usuario {
 
         return $resultado;
     }
+
+    public function delete($id){
+
+        $sql = "DELETE FROM usuarios WHERE id=$id";
+        $this->conexao->exec($sql);
+    }
 }
 
 //$usuario = new Usuario();
-//$usuario->create("Gabriel Rosário", "gabriel@gmail.com", "senha_segura");
+//$usuario->delete(1);
 
 
 

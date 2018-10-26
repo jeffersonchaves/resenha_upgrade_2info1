@@ -26,13 +26,26 @@
         $usuario = new Usuario();
         $usuario->create($nome, $email, $senha);
 
+        // TODO o redirecionamento ocasiona o cadastro repetido
         index();
 
     }
 
     function excluir(){
-        echo "chamou o excluir";
+        $usuario = new Usuario();
+        $usuario->delete($_GET['id']);
+
+        index();
     }
+
+    function chocolatear(){
+
+        require __DIR__ . "/../views/usuario_editar.php";
+
+    }
+
+
+
 
     //Gerenciador de ROTAS
     if(isset($_GET['acao']) and function_exists($_GET['acao']) ){
