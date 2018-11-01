@@ -26,6 +26,13 @@ class Usuario {
         $this->conexao = $this->conexao->getConnection();
     }
 
+    public function getUsuarioPorID($id){
+
+        $sql = "SELECT * FROM usuarios WHERE id=$id";
+        $usuario = $this->conexao->query($sql)->fetch(PDO::FETCH_ASSOC);
+        return $usuario;
+    }
+
     public function getUsuarios() {
         $listaUsuario = $this->conexao->query("select * from usuarios")->fetchAll();
         return $listaUsuario;
@@ -44,10 +51,16 @@ class Usuario {
         $sql = "DELETE FROM usuarios WHERE id=$id";
         $this->conexao->exec($sql);
     }
+
+    public function update($id, $nome, $email, $senha){
+        $sql = "UPDATE usuarios set nome='$nome', email='$email', senha='$senha' WHERE id = $id";
+        $this->conexao->exec($sql);
+    }
+
 }
 
-//$usuario = new Usuario();
-//$usuario->delete(1);
+$usuario = new Usuario();
+$usuario->update(20, "Rambo", "rambo@stallone.com", "senha_segura");
 
 
 

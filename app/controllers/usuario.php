@@ -38,10 +38,26 @@
         index();
     }
 
-    function chocolatear(){
+    function editar(){
+
+        $usuario = new Usuario();
+        $dadosUsuario = $usuario->getUsuarioPorID($_GET['id']);
 
         require __DIR__ . "/../views/usuario_editar.php";
 
+    }
+
+    function update(){
+
+        $id    = $_POST['id'];
+        $nome  = $_POST['nome'];
+        $email = $_POST['email'];
+        $senha = $_POST['senha'];
+
+        $usuario = new Usuario();
+        $usuario->update($id, $nome, $email, $senha);
+
+        index();
     }
 
 

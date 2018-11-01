@@ -37,7 +37,7 @@
                     <td><?= $usuario['nome'] ?></td>
                     <td><?= $usuario['email'] ?></td>
                     <td>
-<a href="http://localhost/2info1/resenha_upgrade/app/controllers/usuario.php?acao=chocolatear&id=<?= $usuario['id'] ?>">editar</a>
+<a href="http://localhost/2info1/resenha_upgrade/app/controllers/usuario.php?acao=editar&id=<?= $usuario['id'] ?>">editar</a>
 <a href="http://localhost/2info1/resenha_upgrade/app/controllers/usuario.php?acao=excluir&id=<?= $usuario['id'] ?>">excluir</a>
                     </td>
                 </tr>

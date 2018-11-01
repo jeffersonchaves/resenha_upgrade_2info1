@@ -12,26 +12,28 @@
 </head>
 <body>
 
-<div class="container">
+<div class="container mt-5">
 
-    <h1>Editar usuário ???</h1>
+    <h1>Editar usuário <?= $dadosUsuario['nome'] ?></h1>
 
 
-    <form method="post" action="usuario.php?acao=create">
+    <form method="post" action="usuario.php?acao=update">
+
+        <input type="hidden" name="id" value="<?= $_GET['id'] ?>" >
 
         <div class="form-group">
             <label for="nome">Nome</label>
-            <input name="nome" type="text" class="form-control" id="nome" placeholder="digite seu nome">
+            <input value="<?= $dadosUsuario['nome'] ?>" name="nome" type="text" class="form-control" id="nome" placeholder="digite seu nome">
         </div>
 
         <div class="form-group">
             <label for="email">Email</label>
-            <input name="email" type="email" class="form-control" id="email" placeholder="digite seu email">
+            <input value="<?= $dadosUsuario['email'] ?>" name="email" type="email" class="form-control" id="email" placeholder="digite seu email">
         </div>
 
         <div class="form-group">
             <label for="senha">Senha</label>
-            <input name="senha" type="password" class="form-control" id="senha" placeholder="digite sua senha">
+            <input value="<?= $dadosUsuario['senha'] ?>" name="senha" type="password" class="form-control" id="senha" placeholder="digite sua senha">
         </div>
 
         <button type="submit" class="btn btn-primary">Submit</button>
